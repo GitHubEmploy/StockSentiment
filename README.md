@@ -1,4 +1,4 @@
-# StockSentiment
+# AIStockSentiment
 
 ## Objective/Summary
 The Objective of this is to be able pull "Sentiment" of a stock from news articles and snippets. In order to do this, it uses a NLU Network and Tokeniser to determine wether the stock has a good overall sentiment, or a bad overall sentiment. This can be determined when the sentiment is negative, its a genraly bad stock, and if the sentiment is positive, its a generaly good stock. How much negative or positive can tell how bad or good the stock generaly is. 
@@ -41,3 +41,31 @@ The really cool thing about AI is that it takes a suprising small amount of code
 This pretty much means that it is loading its pretrained algorithm that it generated the last time that we used it. This means that every time you use the tool, it will becaome smarter and faster the predicting sentiment. This is the power of AI. 
 
 ## Evaluating Sentiment
+Now, we have the model loaded and the algorithm trained, now we can start evaluating the model. First, we pull all data from the API endpoints. Then we get all news snippets that have the stock name in it or relates to its market. Next, we can save all of these news to a list, each sentence a new char in the list. Then, we iterate through the list and then use our generated model to evaluate it and every time it sees a positive, it add how much positive it is to a variable, and same vice versa. Below I have gine a Python3 example of this for you to better visualize what I am saying.
+```python
+response = newsapi.get_everything(qintitle=stock)
+
+news = api.polygon.news(stock)
+
+file = open('news.txt', 'w')
+
+sentiment = 0
+
+for line in response['articles']:
+    words = str(line['title'])
+    file.write(words)
+    sentence = Sentence(str(words))
+    model.predict(sentence)
+    total_sentiment = sentence.labels
+    print(str(words))
+
+    if total_sentiment[0].value == 'NEGATIVE':
+        print(str(total_sentiment[0].value) + " : " + str(total_sentiment[0].to_dict()['confidence']))
+        sentiment -= total_sentiment[0].to_dict()['confidence'] / 2  # Flair favors negative outcomes
+
+    # Checks to see if the sentiment is positive and adds how positive flair thinks it is
+    elif total_sentiment[0].value == 'POSITIVE':
+        print(str(total_sentiment[0].value) + " : " + str(total_sentiment[0].to_dict()['confidence']))
+        sentiment += total_sentiment[0].to_dict()['confidence']
+```
+We run 2 of the above scripts to determine sentiment. One for NewsAPI, and one for Polygon.io.
