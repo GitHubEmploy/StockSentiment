@@ -68,4 +68,7 @@ for line in response['articles']:
         print(str(total_sentiment[0].value) + " : " + str(total_sentiment[0].to_dict()['confidence']))
         sentiment += total_sentiment[0].to_dict()['confidence']
 ```
-We run 2 of the above scripts to determine sentiment. One for NewsAPI, and one for Polygon.io.
+We run 2 of the above scripts to determine sentiment. One for NewsAPI, and one for Polygon.io. We also ran another script for the amrket, in this case AAPL, we ran another script on nasdaq market, and added that to the total sentiment
+
+## Results
+
