@@ -3,6 +3,16 @@
 ## Objective/Summary
 The Objective of this is to be able pull "Sentiment" of a stock from news articles and snippets. In order to do this, it uses a NLU Network and Tokeniser to determine wether the stock has a good overall sentiment, or a bad overall sentiment. This can be determined when the sentiment is negative, its a genraly bad stock, and if the sentiment is positive, its a generaly good stock. How much negative or positive can tell how bad or good the stock generaly is. 
 
+## API Request
+First, we have to get our data. We are doing this by use of an Polygon.io API for news as our first source, and NewsAPI as a second API data source. We are using external modules for both of these APIs. We have provided an example in Python3 below.
+```python
+from newsapi import NewsApiClient
+import alpaca_trade_api as tradeapi
+
+polygonapi = tradeapi.REST('SECRETAPIKEY','https://api.polygon.io' )
+newsapi = NewsApiClient(api_key='ANOTHERSECRETAPIKEY')
+```
+
 ## Determining The Token Of A Sentence
 There are two types of objects that are central to this library, namely the `Sentence` and `Token` objects. A
 `Sentence` holds a textual sentence and is essentially a list of `Token`. For example, if we were to run the very simple sentiment analysis on the sentence `The grass is green`, it will have a token of 5. This tells us that the sentence consists of 5 tokens. You can access the tokens of a sentence via their token id or with their index in python. This determines the tokenisation of the sentence, and is not very useful as we are looking for sentiment, aka `Sentence` not `Token`, but it can still be used as a validity check for our end result. Below I provided a Python3 example of tokenization on a snippet of AAPL news. 
@@ -22,4 +32,6 @@ import flair
 
 model = flair.models.TextClassifier.load('en-sentiment')
 ```
+
+## Evauating Sentiment
 
