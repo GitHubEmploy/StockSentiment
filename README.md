@@ -72,3 +72,5 @@ We run 2 of the above scripts to determine sentiment. One for NewsAPI, and one f
 
 ## Results
 The results were mildly confusing to me, as I thought that the stock was doing well, but when I ran news analysis on it, it gave me `-6.000672280788422`. This was hard to belive at first, but when I waited a few days and expected it to go up, it actually crashed! The AAPL Stock crashed 15 points in the Nasdaq market. The current date of writing this is December 1, 2020, at 10:49:56. I have also linked a demo below of my code in action in case you would like to see that.
+
+https://youtu.be/YABkU2FsqZA
