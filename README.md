@@ -1,7 +1,6 @@
 # StockSentiment
 
 ## Objective/Summary
-
 The Objective of this is to be able pull "Sentiment" of a stock from news articles and snippets. In order to do this, it uses a NLU Network and Tokeniser to determine wether the stock has a good overall sentiment, or a bad overall sentiment. This can be determined when the sentiment is negative, its a genraly bad stock, and if the sentiment is positive, its a generaly good stock. How much negative or positive can tell how bad or good the stock generaly is. 
 
 ## Determining The Token Of A Sentence
@@ -14,8 +13,13 @@ sentence = Sentence('All-time highs are all the rage in 2019. Leading the pack, 
 
 print(sentence)
 ```
-The output was a tokenization of 62. This tells us that the stock AAPL, (The one we got news for), current has a sentiment "value" of 62. Lets say we check the tokenization again tommorow, and it is 120, then we will not to buy this stock because the volatility is way too high. The value of the tokenization is saved to a .csv file every time someone runs an analysis. 
+The output was a tokenization of 62. This tells us that the stock AAPL, (The one we got news for), current has a sentiment "value" of 62. Lets say we check the tokenization again tommorow, and it is 120, then we will not to buy this stock because the volatility is way too high. The value of the tokenization is saved to a .csv file every time someone runs an analysis. Then, it can analyze the previous data to automaticaly effect the given sentiment.
 
 ## Loading The Corpus
-One of the first stops toward the actuall predicting is loading the english corpus. The corpus can be used as a data base of pretrained models, so we do not have to waste time training the models. Its also a good idea to use previous databses/corpuses because they have been selectivley trained so that we have maximum accuracy. But, if you are not satisfied, you can do training using the current corpus, and make an even more accurate one, even though I would not suggest it.
+One of the first stops toward the actuall predicting is loading the english corpus. The corpus can be used as a data base of pretrained models, so we do not have to waste time training the models. Its also a good idea to use previous databses/corpuses because they have been selectivley trained so that we have maximum accuracy. But, if you are not satisfied, you can do training using the current corpus, and make an even more accurate one, even though I would not suggest it. Below is an example to load a Flair Data Corpus into Python3.
+```python
+import flair
+
+model = flair.models.TextClassifier.load('en-sentiment')
+```
 
