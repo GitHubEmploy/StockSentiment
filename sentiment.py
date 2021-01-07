@@ -13,7 +13,7 @@ import alpaca_trade_api as tradeapi
 flair.device = torch.device('cpu')
 
 #STATING POLYGON.IO API
-api = tradeapi.REST('ZFA3HZJSCNVu7dJGm0Y4pNIBjjIRRg4c','https://api.polygon.io' )
+api = tradeapi.REST('YOURPOLYGONAPIKEY','https://api.polygon.io' )
 
 #DEFINING FUNCTION
 def sentiment(stock, api):
@@ -24,7 +24,7 @@ def sentiment(stock, api):
     flair_sentiment = flair.models.TextClassifier.load('en-sentiment')
 
     #NEWSAPI API call
-    newsapi = NewsApiClient(api_key='c9f2ed7ab2724a699b000dd683262960')
+    newsapi = NewsApiClient(api_key='YOURNEWSAPIKEY')
 
     #GET THE ARTICLES
     response = newsapi.get_everything(qintitle=stock)
