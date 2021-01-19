@@ -1,7 +1,7 @@
 # AIStockSentiment
 
 ## Objective/Summary
-The Objective of this is to be able pull "Sentiment" of a stock from news articles and snippets. In order to do this, it uses a NLU Network and Tokeniser to determine wether the stock has a good overall sentiment, or a bad overall sentiment. This can be determined when the sentiment is negative, its a genraly bad stock, and if the sentiment is positive, its a generaly good stock. How much negative or positive can tell how bad or good the stock generaly is. It also uses an API Request for the data sourch, and Tokenization for complete validation.
+The Objective of this is to be able pull "Sentiment" of a stock from news articles and snippets. In order to do this, it uses a NLU Network and Tokeniser to determine wether the stock has a good overall sentiment, or a bad overall sentiment. This can be determined when the sentiment is negative, its a generaly bad stock, and if the sentiment is positive, its a generaly good stock. How much negative or positive can tell how bad or good the stock generaly is. It also uses an API Request for the data source, and Tokenization for complete validation.
 
 ## API Request
 First, we have to get our data. We are doing this by use of an Polygon.io API for news as our first source, and NewsAPI as a second API data source. We are using external modules for both of these APIs. We have provided an example in Python3 below.
