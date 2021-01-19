@@ -34,7 +34,7 @@ model = flair.models.TextClassifier.load('en-sentiment')
 ```
 
 ## Generating Sentiment
-The really cool thing about AI is that it takes a suprising small amount of code. The reason for this is becasue all of the "code" is saved in .pb files in which the AI is constantly changing. It really saves the algorithm inide these .pb files, therefore, I do not ahve to code an algorith to evaluate sentiment. We can use the pretrained corpus we loaded in the last step. This corpus is an already trained algorithm that we can use. And in case you are wondering where it saves the algorithm, it always does this line before it starts:
+The really cool thing about AI is that it takes a suprising small amount of code. The reason for this is becasue all of the "code" is saved in .pb files in which the AI is constantly changing. It really saves the algorithm inide these .pb files, therefore, I do not have to code an algo to evaluate sentiment. We can use the pretrained corpus we loaded in the last step. This corpus is an already trained algorithm that we can use. And in case you are wondering where it saves the algorithm, it always does this line before it starts:
 ```shell
 2020-12-01 09:10:50,546 loading file C:\Users\Mohit\.flair\models\sentiment-en-mix-distillbert_3.1.pt
 ```
