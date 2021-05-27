@@ -1,5 +1,7 @@
 # AIStockSentiment
 
+Fork of Original, (https://github.com/GitHubEmploy/StockSentiment)
+
 ## Objective/Summary
 The Objective of this is to be able pull "Sentiment" of a stock from news articles and snippets. In order to do this, it uses a NLU Network and Tokeniser to determine wether the stock has a good overall sentiment, or a bad overall sentiment. This can be determined when the sentiment is negative, its a generaly bad stock, and if the sentiment is positive, its a generaly good stock. How much negative or positive can tell how bad or good the stock generaly is. It also uses an API Request for the data source, and Tokenization for complete validation.
 
